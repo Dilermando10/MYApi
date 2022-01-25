@@ -1,5 +1,7 @@
 package com.dilermando.myapi.rersources;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,4 +25,11 @@ public class UsuarioRersource {
 		return ResponseEntity.ok().body(obj);
 
 	}
+
+	@GetMapping
+	public ResponseEntity<List<Usuario>> findAll() {
+		List<Usuario> list = service.findAll();
+		return ResponseEntity.ok().body(list);
+	}
+
 }
