@@ -36,4 +36,9 @@ public class UsuarioService {
 		return repository.save(newObj);
 	}
 
+	public Usuario create(Usuario obj) {
+		obj.setId(null);
+		return repository.save(obj);
+	}
+
 }
